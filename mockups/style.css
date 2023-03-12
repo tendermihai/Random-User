@@ -1,17 +1,21 @@
+body {
+  background-color: antiquewhite;
+}
+
 .card {
-  width: 350px;
-  height: 150px;
+  width: 70%;
   border: 1px solid gray;
   border-radius: 10px;
   display: flex;
-  flex-direction: row;
-  gap: 50px;
+  flex-direction: column;
+
+  background-color: azure;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  row-gap: 20px;
 }
 
 .name {
@@ -23,8 +27,17 @@ p {
 }
 
 .info {
-  text-align: right;
-  margin-bottom: 60px;
+  /* text-align: right; */
+  /* margin-bottom: 60px;
+  margin-left: 10px; */
+
+  font-size: 0.75rem;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .avatar {
@@ -32,4 +45,26 @@ p {
   height: 100px;
   margin: 10px;
   border-radius: 50%;
+
+  display: block;
+
+  margin: auto;
+
+  margin-top: 10px;
+}
+
+.pg-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+}
+
+.btn {
+  border: none;
+  background-color: white;
+  color: blue;
+  width: 30px;
+  height: 30px;
+  margin-top: 50px;
 }
