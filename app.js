@@ -8,6 +8,8 @@ async function getPersons() {
 let card = document.querySelector(".card");
 let container = document.querySelector(".container");
 let cards = document.querySelectorAll(".card");
+let btnSearch = document.querySelector(".btnSearch");
+let inptSearch = document.querySelector(".searchInpt");
 
 //functie care imi creeaza carduri
 function createCard(person) {
@@ -94,4 +96,20 @@ btns.addEventListener("click", async (e) => {
     let conv = await data.json();
     attachCards(conv.results);
   }
+});
+
+//filter by name
+
+btnSearch.addEventListener("click", async (e) => {
+  container = document.querySelector(".container");
+
+  [].slice.call(container.children).forEach((e) => {
+    let name = e.querySelector(".name").textContent.toLowerCase();
+
+    if (!name.includes(inptSearch.value.toLowerCase())) {
+      e.classList.add("hide");
+    } else {
+      e.classList.remove("hide");
+    }
+  });
 });
