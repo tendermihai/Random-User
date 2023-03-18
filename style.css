@@ -90,3 +90,7 @@ h1 {
   width: 80px;
   height: 30px;
 }
+
+.hide {
+  display: none !important;
+}
