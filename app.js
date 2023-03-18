@@ -95,3 +95,39 @@ btns.addEventListener("click", async (e) => {
     attachCards(conv.results);
   }
 });
+
+//filter by name
+
+function filterByName() {
+  // Get the search input value
+  const searchValue = document.querySelector(".search").value;
+
+  // Get all the employee cards
+  const employeeCards = document.querySelectorAll(".card");
+
+  // Create an array to hold the filtered cards
+  const filteredCards = [];
+
+  // Loop through each employee card
+  employeeCards.forEach((card) => {
+    // Get the employee name
+    const employeeName = card.querySelector(".name").textContent;
+
+    // If the employee name contains the search value, add the card to the filtered list
+    if (employeeName.includes(searchValue)) {
+      filteredCards.push(card);
+    }
+  });
+
+  // If no cards match the search value, show all cards
+  if (filteredCards.length === 0) {
+    attachCards(employeeCards);
+  } else {
+    // Display the filtered list of employee cards
+    attachCards(filteredCards);
+  }
+}
+
+let btnSearch = document.querySelector(".btnSearch");
+
+btnSearch.addEventListener("click", filterByName);

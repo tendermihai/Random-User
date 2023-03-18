@@ -77,3 +77,16 @@ h1 {
 .btn:hover {
   color: coral !important;
 }
+
+.search {
+  margin: 20px !important;
+}
+
+.btnSearch {
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 5px;
+  width: 80px;
+  height: 30px;
+}
