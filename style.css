@@ -94,3 +94,12 @@ h1 {
 .hide {
   display: none !important;
 }
+
+.sorting {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.sort {
+  padding: 10px;
+}

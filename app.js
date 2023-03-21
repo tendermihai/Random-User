@@ -10,7 +10,7 @@ let container = document.querySelector(".container");
 let cards = document.querySelectorAll(".card");
 let btnSearch = document.querySelector(".btnSearch");
 let inptSearch = document.querySelector(".searchInpt");
-
+let selectBtn = document.querySelector(".sort");
 //functie care imi creeaza carduri
 function createCard(person) {
   let section = document.createElement("section");
@@ -112,4 +112,28 @@ btnSearch.addEventListener("click", async (e) => {
       e.classList.remove("hide");
     }
   });
+});
+
+// function sortByGender(persons, field) {
+//   for (let i = 0; i < persons.length; i++) {
+//     for (let j = i + 1; j < persons.length; j++) {
+//       if (persons[i][field] > persons[j][field]) {
+//         let aux = persons[i];
+//         persons[i] = persons[j];
+//         persons[j] = aux;
+//       }
+//     }
+//   }
+// }
+
+selectBtn.addEventListener("change", async () => {
+  if (selectBtn.value === "gender") {
+    let data = await fetch("https://randomuser.me/api/?results=100&gender=");
+    let conv = await data.json();
+    attachCards(conv.results);
+  } else if (selectBtn.value === "location") {
+    let data = await fetch("https://randomuser.me/api/?results=100&nat=us");
+    let conv = await data.json();
+    attachCards(conv.results);
+  }
 });
